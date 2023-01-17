@@ -1,9 +1,18 @@
 @extends('adminlte::page')
 
-@section('title', '商品一覧')
+@section('title', '商品一覧2')
+
 
 @section('content_header')
-    <h1>商品一覧</h1>
+<form id="form1" action="/items/search" method="get">                                               
+    <input id="sbox1" name="s" type="text" placeholder="キーワードを入力">           
+    <input id="sbtn1" type="submit" value="検索">                                   
+</form>
+
+
+
+
+
 @stop
 
 @section('content')
@@ -28,6 +37,7 @@
                                 <th>名前</th>
                                 <th>種別</th>
                                 <th>詳細</th>
+                                <th>更新日時</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,8 +45,13 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
-                                    <td>{{ $item->type }}</td>
-                                    <td>{{ $item->detail }}</td>
+                                    <td>{{ $types[$item->type] ?? '未分類' }}</td>
+                                    <!-- <td>{{ $item->type }}</td> -->
+                                    <!-- <td>{{ $item->detail }}</td> -->
+                                    <!-- <td><a class="btn btn-secondary" href="/item/detail/{{ $item->id }}">詳細</a></td> -->
+                                    <td><a class="btn btn-secondary" href="/item/detail">詳細</a></td>
+
+                                    <td>{{ $item->updated_at }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

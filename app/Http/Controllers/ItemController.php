@@ -25,11 +25,12 @@ class ItemController extends Controller
     {
         // 商品一覧取得
         $items = Item
-            ::where('items.status', 'active')
+            ::where('items.status','active')
             ->select()
             ->get();
 
-        return view('item.index', compact('items'));
+        $types=Item::TYPE;
+        return view('item.index', compact('items','types'));
     }
 
     /**
@@ -56,5 +57,10 @@ class ItemController extends Controller
         }
 
         return view('item.add');
+    }
+
+    public function detail(Request $request) {
+        $item=item::find($request->id);
+        return view('search.detail',['item' => $item, 'types'=>Item::TYPE]);
     }
 }

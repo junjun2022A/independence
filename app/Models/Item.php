@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
@@ -33,4 +33,9 @@ class Item extends Model
      */
     protected $casts = [
     ];
+
+    use HasFactory;
+    const TYPE = [1=>"アウター", 2=>"トップス", 3=>"ボトムス"];
+    // protected $fillable = ['name','type','detail'];
+
 }
