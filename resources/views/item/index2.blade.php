@@ -24,7 +24,7 @@
                     <div class="card-tools">
                         <div class="input-group input-group-sm">
                             <div class="input-group-append">
-                                <!-- <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a> -->
+                                <a href="{{ url('items/add') }}" class="btn btn-default">商品登録</a>
                             </div>
                         </div>
                     </div>
@@ -36,7 +36,8 @@
                                 <th>ID</th>
                                 <th>名前</th>
                                 <th>種別</th>
-                                <th>詳細</th>
+                                <th>状態</th>
+                                <th>登録日時</th>
                                 <th>更新日時</th>
                             </tr>
                         </thead>
@@ -46,12 +47,20 @@
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->name }}</td>
                                     <td>{{ $types[$item->type] ?? '未分類' }}</td>
+                                    <td>
+                                    @if($item->status == 'active')
+                                        有効
+                                    @else
+                                        <p style="color:blue">無効</p>
+                                    @endif
+                                    </td>
+                                    <td>{{$item->created_at}}</td>
+                                    <td>{{$item->updated_at}}</td>
+                                    <td><th><a class="original_btn"  href="/items/edit2/{{$item->id}}">編集</a></th></td>
                                     <!-- <td>{{ $item->type }}</td> -->
                                     <!-- <td>{{ $item->detail }}</td> -->
-                                    <td><a class="btn btn-secondary" href="/items/detail/{{ $item->id }}">詳細</a></td>
+                                    <!-- <td><a class="btn btn-secondary" href="/items/detail/{{ $item->id }}">詳細</a></td> -->
                                     <!-- <td><a class="btn btn-secondary" href="/item/detail">詳細</a></td> -->
-
-                                    <td>{{ $item->updated_at }}</td>
                                 </tr>
                             @endforeach
                         </tbody>

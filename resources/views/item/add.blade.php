@@ -28,14 +28,26 @@
                             <input type="text" class="form-control" id="name" name="name" placeholder="名前">
                         </div>
 
-                        <div class="form-group">
+                        <div>
+                            <label for="form-type" class="col-sm-3 control-label">種別</label>
+                            <select name="type" id="type-select">
+                            <option value="">--Please choose an option--</option>
+                            <option value="1" @if(1 === (int)old('type')) selected @endif>アウター</option>
+                            <option value="2" @if(2 === (int)old('type')) selected @endif>トップス</option>
+                            <option value="3" @if(3 === (int)old('type')) selected @endif>ボトムス</option>
+                            </select>
+                        </div>
+
+
+                        <!-- <div class="form-group">
                             <label for="type">種別</label>
                             <input type="number" class="form-control" id="type" name="type" placeholder="1, 2, 3, ...">
-                        </div>
+                        </div> -->
 
                         <div class="form-group">
                             <label for="detail">詳細</label>
-                            <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明">
+                            <textarea name="detail" id="detail" cols="30" rows="10" class="form-control"></textarea>
+                            <!-- <input type="text" class="form-control" id="detail" name="detail" placeholder="詳細説明"> -->
                         </div>
                     </div>
 

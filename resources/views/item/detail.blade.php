@@ -18,7 +18,7 @@
 </style>
 </head>
 <body>
-@include('parts.nav')
+
 <div class="container">
 <h1 class="text-center">商品詳細</h1>
 <table class="table table-hover">
@@ -42,7 +42,7 @@
 </table>
     <div>
 
-        <a class="btn btn-secondary" href="/search">一覧に戻る</a>
+        <a class="btn btn-secondary" href="/items">一覧に戻る</a>
     </div>
 </div>
 </body>
