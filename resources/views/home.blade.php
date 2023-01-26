@@ -22,7 +22,7 @@
             </tr> -->
             <tr>
                 <th class="width1">New</th>
-                <td class="width2">{{ $item->id }}</td>
+                {{-- <td class="width2">{{ $item->id }}</td> --}}
                 <td class="width3">{{ $item->name }}</td>
                 <td class="width4">{{ $types[$item->type] ?? '未分類' }}</td>
                 <!-- <td>{{ $item->type }}</td> -->
@@ -30,7 +30,9 @@
                 <!-- <td><a class="btn btn-secondary" href="/items/detail/{{ $item->id }}">詳細</a></td> -->
                 <!-- <td><a class="btn btn-secondary" href="/item/detail">詳細</a></td> -->
 
-                <td class="width5">{{ $item->updated_at }}</td>
+                {{-- <td class="width5">{{ $item->updated_at }}</td> --}}
+                <td class="width5">{{$item -> created_at->format('Y-m-d')}}</td>
+
             </tr>
         @endforeach
      </table>
