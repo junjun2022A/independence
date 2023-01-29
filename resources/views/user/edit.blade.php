@@ -25,7 +25,7 @@
 <div class="container">
   <div style="text-align:center;">
   
-    <h1>ユーザ編集 会員ID:{{$users->id}}</h1>
+    <h1>編集 会員ID:{{$users->id}}</h1>
   </div>
 
       <form method="POST" action="{{route('user.update',['id' =>$users->id])}}">

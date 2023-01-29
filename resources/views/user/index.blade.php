@@ -51,7 +51,6 @@
                     <td>{{$users->updated_at}}</td>
                     
 
-
                 </tr>
                 
                 @endforeach
