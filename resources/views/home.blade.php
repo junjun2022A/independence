@@ -32,10 +32,11 @@
 
                 {{-- <td class="width5">{{ $item->updated_at }}</td> --}}
                 <td class="width5">{{$item -> created_at->format('Y-m-d')}}</td>
-
+                
             </tr>
         @endforeach
      </table>
+     <img src="{{ asset('img/23348350.jpg') }}" class="img" alt="">
 @stop
 
 @section('css')

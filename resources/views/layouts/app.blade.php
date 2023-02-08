@@ -20,12 +20,14 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app" style="background-color: #ffff80;">
+    <div id="app" style="background-color: #37bfbc;">
+    {{-- <div id="app"> --}}
+        {{-- <img src="{{ asset('img/23498886.jpg') }}" alt=""> --}}
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{-- {{ config('app.name', 'Laravel') }} --}}
-                    {{'商品管理システム'}}
+                    {{ config('app.name', 'Laravel') }}
+                    {{-- {{'商品管理システム'}} --}}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -43,13 +45,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">ログイン</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">新規登録</a>
                                 </li>
                             @endif
                         @else
@@ -81,8 +83,12 @@
         </main>
     </div>
 </body>
+{{-- <img src="{{ asset('img/23498886.jpg') }}" width="5000px" height="1000px" alt=""> --}}
+{{-- <img src="{{ asset('img/23498886.jpg') }}" alt=""> --}}
 </html>
 
 @section('css')
-
+.navbar-brand {
+    font-size: 16px;
+}
 @stop
